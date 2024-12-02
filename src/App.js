@@ -1,23 +1,28 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Components/header';
+import Profile from './Components/profile';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className='mx-10 my-10'>
+        <Header />
+        <div className=' grid grid-cols-[2fr_3fr] gap-8 w-full mt-6 h-screen'  >
+          <div className="min-w-[300px]" style={{ flex: 1 }}>
+            <img
+              src="images/map.png"
+              alt="oops"
+              className="w-full h-full object-cover"
+            // style={{ alignSelf: 'center' }}
+            />
+          </div>
+          <div className=''>
+            <Profile />
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }

@@ -28,6 +28,11 @@
   color: #61dafb;
 }
 
+.css-zitgxn-JoyCircularProgress-track{
+  stroke: #2F2F2F;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -9,9 +9,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #2d2d2d;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #6979f8;
+  border-radius: 10px;
+  border: 2px solid #2d2d2d; /* Optional: adds border for better visibility */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #536dfe; /* Change color on hover */
 }
