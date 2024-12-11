@@ -9,7 +9,7 @@ const Header = () => {
                 <img
                     src="images/home.png"
                     alt="oops"
-                    className=" w-12 h-12"
+                    className="hidden sm:block w-12 h-12"
                     style={{ alignSelf: 'center' }}
                 />
                 <div className="flex flex-col text-left justify-between gap-y-1.5">

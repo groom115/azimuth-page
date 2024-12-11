@@ -122,13 +122,13 @@ const Profile = () => {
         }
       `}
                 </style>
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between gap-4">
                     <div className="text-left">
                         <p className="text-white text-2xl font-semibold">Austin</p>
                         <p className="text-white">Demographics</p>
                     </div>
                     <div className="px-2 py-4 rounded-lg bg-black">
-                        <div className="pb-4   overflow-x-hidden scroll-container " style={{ width: 600, }}>
+                        <div className="pb-4   overflow-x-hidden scroll-container sm:w-[600px] w-[300px] " style={{ maxWidth: 600, minWidth: 300 }}>
                             <div className=" flex space-x-4">
                                 {profileData.map((item, index) => (
                                     <div
@@ -253,7 +253,7 @@ const Profile = () => {
                     <AgeCard name="Race" />
 
                 </div>
-                <div className="flex flex-row mt-6 gap-4">
+                <div className="flex flex-col sm:flex-row mt-6 gap-4 items-center">
                     {Education()}
                     {Location()}
                 </div>
