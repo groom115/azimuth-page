@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 
+
 const Header = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row gap-4">
-                {/* <HomeOutlinedIcon className="text-white align-center" style={{ alignSelf: 'center' }} /> */}
+
                 <img
                     src="images/home.png"
                     alt="oops"
@@ -19,11 +32,13 @@ const Header = () => {
 
             </div>
             <div>
-                <img
-                    src="images/Logo.png"
-                    alt="oops"
-                    className=" w-30 h-8"
-                />
+                {windowWidth > 1000 && (
+                    <img
+                        src="images/Logo.png"
+                        alt="oops"
+                        className="w-30 h-8"
+                    />
+                )}
             </div>
             <div className="flex flex-row gap-1">
                 <div
@@ -47,7 +62,7 @@ const Header = () => {
                             placeholderColor="#6B7280"
                             // onChange={(e) => setNurseName(e.target.value)}
                             style={{ width: "100%", height: 44, borderColor: "black", backgroundColor: 'black' }}
-                            className=" pl-3 pr-10 block w-full rounded-xl  border-1 py-1.5 shadow-sm ring-2 ring-inset ring-blue-600 focus:none text-sm leading-6"
+                            className=" pl-10 pr-3 block w-full rounded-xl  border-1 py-1.5 shadow-sm ring-2 ring-inset ring-blue-600 focus:none text-sm leading-6 text-white"
                         />
 
                     </div>
@@ -62,6 +77,9 @@ const Header = () => {
                     />
                 </div>
             </div>
+
+
+
         </div>
     )
 }
