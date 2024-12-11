@@ -1,0 +1,1 @@
+export const TabData = ['Demographics', 'Venuses', 'Music Data']
