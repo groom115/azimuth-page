@@ -4,7 +4,7 @@ import CircularProgress from '@mui/joy/CircularProgress';
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 import LinearProgress, { LinearProgressProps } from '@mui/material/LinearProgress';
 
-const Profile = () => {
+const Profile = ({ windowWidth }) => {
 
 
     const GenderCard = ({ gender, value }) => {
@@ -69,7 +69,7 @@ const Profile = () => {
         )
     }
     const profileDetail = () => {
-
+        console.log(windowWidth / 2 - 20)
         const profileData = [
             { label: "Median Age", value: "115" },
             { label: "Under 18", value: "30%" },
@@ -122,13 +122,13 @@ const Profile = () => {
         }
       `}
                 </style>
-                <div className="flex flex-row justify-between gap-4">
+                <div className="flex  flex-col sm:flex-row gap-4 justify-between">
                     <div className="text-left">
-                        <p className="text-white text-2xl font-semibold">Austin</p>
-                        <p className="text-white">Demographics</p>
+                        <p className="text-white sm:text-2xl text-xl font-semibold">Austin</p>
+                        <p className="text-white sm:text-xl text-lg">Demographics</p>
                     </div>
                     <div className="px-2 py-4 rounded-lg bg-black">
-                        <div className="pb-4   overflow-x-hidden scroll-container sm:w-[600px] w-[300px] " style={{ maxWidth: 600, minWidth: 300 }}>
+                        <div className="pb-4   overflow-x-hidden scroll-container sm:w-[600px]  " style={{ maxWidth: 600, width: `calc(${windowWidth}px - 220px)`, minWidth: 200 }}>
                             <div className=" flex space-x-4">
                                 {profileData.map((item, index) => (
                                     <div
@@ -241,14 +241,14 @@ const Profile = () => {
                 </div>
                 <div className="mt-6">
                     <p className="text-white font-medium text-left">Gender</p>
-                    <div className="flex flex-row gap-3">
+                    <div className="flex flex-col sm:flex-row gap-3">
 
                         <GenderCard gender="Men" value="28" />
                         <GenderCard gender="Women" value="35" />
                     </div>
 
                 </div>
-                <div className="flex flex-row mt-6 gap-4">
+                <div className="flex flex-col sm:flex-row mt-6 gap-4">
                     <AgeCard name="Age" />
                     <AgeCard name="Race" />
 

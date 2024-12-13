@@ -9,12 +9,22 @@ import Tabs from './Components/tabs';
 function App() {
 
   const [activeTab, setActiveTab] = useState(0);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <div className="App">
       <div className='mx-10 my-10 mb-10'>
-        <Header />
+        <Header windowWidth={windowWidth} />
         <Tabs value={TabData} activeTab={activeTab} setActiveTab={setActiveTab} />
 
         {activeTab === 0 ? (
@@ -28,7 +38,7 @@ function App() {
               />
             </div>
             <div className="mb-3 sm:mb-6">
-              <Profile />
+              <Profile windowWidth={windowWidth} />
             </div>
           </div>
         ) : (
