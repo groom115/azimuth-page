@@ -149,7 +149,7 @@ const Profile = ({ windowWidth }) => {
 
     const Education = () => {
         const eduGroups = [
-            { label: "High school degree or less", value: 40, percentage: "15%" },
+            { label: "High school degree or less", value: 80, percentage: "25%" },
             { label: "High school ", value: 60, percentage: "25%" },
             { label: "Bachelor’s or Advanced degree", value: 30, percentage: "10%" },
 
